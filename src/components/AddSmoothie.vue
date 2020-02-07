@@ -1,5 +1,5 @@
 <template>
-<div class="add-smoothie container">
+<div class="add-smoothie container z-depth-1">
   <h2 class="center-align indigo-text">Add New Smoothie Recipe</h2>
   <form @submit.prevent="addSmoothie">
     <div class="field title">
@@ -55,6 +55,9 @@
           })
           .then(() => {
             this.$router.push({ name: 'Index' })
+          })
+          .catch(err => {
+            console.log(err)
           })
         } else {
           this.feedback = 'You must enter a smoothie title'
